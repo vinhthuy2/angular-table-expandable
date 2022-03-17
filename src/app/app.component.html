@@ -1,0 +1,32 @@
+<div>
+  <table>
+    <thead>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of data">
+        <tr>
+          <td>{{ item.date }}</td>
+          <td>{{ item.name }}</td>
+          <td>
+            <div>
+              <span>{{ actions[item.action - 1] }}</span>
+              <label class="plus" *ngIf="item.action === 2">
+                <input type="checkbox" (click)="toggleExpansion(item)" />
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr [ngStyle]="{'height': item.expanded ? '100px' : '0px'}" >
+          <td colspan="3" *ngIf="item.expanded">
+            <div class="expansion" >
+              something here
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

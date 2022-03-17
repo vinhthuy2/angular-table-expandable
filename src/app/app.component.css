@@ -1,0 +1,57 @@
+table,th,td {
+  border: solid gray 1px;
+  border-collapse: collapse;
+}
+
+td,th {
+  padding: 0.5rem;
+}
+
+.plus input {
+  visibility: hidden;
+  position: relative;
+}
+
+.plus input::before {
+  content: '+';
+  font-size: 16px;
+  color: black;
+  position: absolute;
+  visibility: visible;
+  top: 45%;
+  left: 35%;
+  transform: translate(-50%,-50%);
+}
+
+.plus input:checked:before {
+  content: '-';
+  top: 25%;
+}
+
+.plus {
+  float: right;
+  margin-left: 1rem;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border: solid 1px gray;
+  border-radius: 50%;
+  background-color: #eeeeee;
+
+}
+
+
+.expansion {
+  /* min-height: 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: antiquewhite; */
+}
+
+tr {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
